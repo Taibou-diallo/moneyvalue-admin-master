@@ -1,19 +1,30 @@
-import HomePair from './components/HomePair.vue'
-import SignUp from './components/SignUp.vue'
+import ViewPair from './components/pairs/ViewPair.vue'
+import SignIn from './components/SignIn.vue'
+import AddPair from './components/pairs/AddPair.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
-        name: "HomePair",
-        component: HomePair,
-        path: "/",
+        name: "ViewPair",
+        component: ViewPair,
+        path: "/pairs/view",
     },
 
     {
-        name: "SignUp",
-        component: SignUp,
-        path: "/signup"
+        name: "SignIn",
+        component: SignIn,
+        path: "/"
     },
+
+    {
+        name: "AddPair",
+        component: AddPair,
+        path: "/pairs/add"
+    }
+
+
+
 ];
 
 const router = createRouter({

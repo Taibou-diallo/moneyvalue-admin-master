@@ -1,9 +1,9 @@
 <template>
-    <h2>La liste des pairs</h2>
+    <h1>add pair</h1>
 </template>
 
 <script>
 export default {
-    name: "HomePair"
+    name:"AddPair"
 }
 </script>

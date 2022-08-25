@@ -1,10 +1,10 @@
 <template>
     <h1>Administrateur</h1>
     <div class="register">
-        <input type="name" v-model="name" placeholder="Entrer votre nom">
+    
         <input type="email" v-model="email" placeholder="Entrer e-mail">
         <input type="password" v-model="password" placeholder="Entrer password">
-        <button v-on:click="signUp">Connexion</button>
+        <button v-on:click="signIn">Connexion</button>
     </div>
 </template>
 
@@ -12,30 +12,30 @@
 // 
 import axios from 'axios'
 export default {
-    name: "SignUp",
+    name: "SignIn",
     data() {
         return {
-            name: "",
+           
             email: "",
             password: ""
         }
     },
 
     methods:{
-       async  signUp(){
-            console.log("signUp",this.name,this.email,this.password)
+       async  signIn(){
+            console.log("signIn",this.email,this.password)
 
             let result = await axios.post("http://localhost:3000/user",{
                 email:this.email,
                 password:this.password,
-                name:this.name
+                
             });
             console.warn(result);
 
             if(result.status==201) {
-              alert("signup done")  
-
               localStorage.setItem("user-info",JSON.stringify(result.data))
+            //   redirection de la page home apres connexion
+              this.$router.push({name:'ViewPair'})
             }
         }
     }
