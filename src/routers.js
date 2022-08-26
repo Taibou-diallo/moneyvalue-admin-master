@@ -1,6 +1,7 @@
 import ViewPair from './components/pairs/ViewPair.vue'
 import SignIn from './components/SignIn.vue'
 import AddPair from './components/pairs/AddPair.vue'
+import ViewConversion from './components/pairs/ViewConversion.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -21,6 +22,12 @@ const routes = [
         name: "AddPair",
         component: AddPair,
         path: "/pairs/add"
+    },
+
+    {
+        name: "ViewConversion",
+        component: ViewConversion,
+        path: "/pairs/conversion"
     }
 
 

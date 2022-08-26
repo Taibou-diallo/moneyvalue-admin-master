@@ -1,5 +1,5 @@
 <template>
-  <!-- <Header /> -->
+  <SignIn />
   <router-view />
 </template>
 
