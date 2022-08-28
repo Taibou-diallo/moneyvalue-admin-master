@@ -30,14 +30,14 @@ export default {
     data() {
         return {
           pairs:[],
-          //  currency_start:"",
-          //  currency_end:"",
-          //  rate:""
+           currency_start:"",
+           currency_end:"",
+           rate:""
         }
     },
 
 mounted() {
-    axios.get('http://127.0.0.1:8000/api/pair/')
+    axios.get('http://127.0.0.1:8000/api/pairs')
 
         .then(response=>
         this.pairs= response.data

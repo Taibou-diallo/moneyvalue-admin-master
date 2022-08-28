@@ -1,15 +1,15 @@
 <template>
   <h2>Creer une nouvelle pair de conversion</h2>
-  <form onsubmit="event.preventDefaul()">
+  <form @submit.prevent="createPair">
     <!-- <select  class="form-select" aria-label="Default select example">
-       <option selected v-model="addPair.currency_start" name="currency_start" >Choisir la seconde devise</option>
+       <option selected v-model="currency_start" name="currency_start" >Choisir la seconde devise</option>
     </select>
 
 
     <select  class="form-select" aria-label="Default select example">
       <option selected v-model="addPair.currency_end" name="currency_end" >Choisir la seconde devise</option>
     </select> -->
-    <input type="number" v-model="addPair.rate" placeholder="entrer le taux">
+    <input  v-model="rate" placeholder="entrer le taux">
     <button v-on:click="AddPair" class="byn-btn-pimary">Enregistrer</button>
   </form>
 </template>
@@ -30,21 +30,21 @@ data() {
   }
 },
 
-// methods: {
-//   createPair(){
-//    axios.post('http://127.0.0.1:8000/api/pair/',this.addPair)
-//    .then(response) =>{
-//     this.
-//    }
-//   }
-// }
-
-mounted() {
-    axios.get("http://127.0.0.1:8000/api/currency").then((response) => {
-      this.currency = response.data;
-      console.log(this.currency);
-    });
+methods: {
+  createPair(){
+   axios.post('http://127.0.0.1:8000/api/pairs/',this.addPair)
+   .then((response) =>{
+    console.log(response)
+   });
   }
+}
+
+// mounted() {
+//     axios.post("http://127.0.0.1:8000/api/currencies").then((response) => {
+//       this.currency = response.data;
+//       console.log(this.currency);
+//     });
+//   }
 }
 
 
