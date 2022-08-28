@@ -25,7 +25,7 @@ export default {
        async  signIn(){
             console.log("signIn",this.email,this.password)
 
-            let result = await axios.post("http://localhost:3000/user",{
+            let result = await axios.post("http://127.0.0.1:8000/users",{
                 email:this.email,
                 password:this.password,
                 
@@ -40,6 +40,8 @@ export default {
         }
     }
 }
+
+
 </script>
 
 <style scoped>

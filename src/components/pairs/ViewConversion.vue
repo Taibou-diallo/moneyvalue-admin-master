@@ -1,80 +1,89 @@
 <template>
-    <h2>Currency Converter</h2>
-    <div id="currency">
-        <div class="container">
-            <div class="container-one">
-                <select name="first-currency" id="first-currency">
-                    <option selected>Choisir la seconde devise</option>
-                    <option value="1">EUR</option>
-                    <option value="2">USD</option>
-                    <option value="3">CAD</option>
-                </select>
-                <input type="number" name="input-one" id="input-one">
-            </div>
-            <div class="container-two">
-                <button>voir</button>
-                <h4 id="baseValue">12345 </h4>
-            </div>
-
-            <div class="container-three">
-                <select name="seond-currency" id="second-currency">
-                    <option selected>Choisir la seconde devise</option>
-                    <option value="1">EUR</option>
-                    <option value="2">USD</option>
-                    <option value="3">CAD</option>
-                </select>
-                <input type="number" id="amout-two" placeholder="0" disabled/>
-            </div>
-
-        </div>
-    </div>
+    <h2>La liste des conversions </h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">La date de conversion</th>
+            <th scope="col">Le montant</th>
+            <th scope="col">Le nombre de conversion</th>
+          </tr>
+        </thead>
+   
+        <tbody>
+          <tr>
+              <td>12/12/12</td>
+              <td>1234543</td>
+              <td>53</td>
+            </tr>
+        </tbody>
+     </table>
 </template>
 
 <script>
+
+
 export default {
-    name:"ViewConversion",
+    name: "ViewConversion",
+
+    
 }
 
 </script>
 
 <style scoped>
- 
-select{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+h2{
+  color:#FF8C00;
+}
+.table{
+  border-collapse: collapse;
+  min-width:400px;
+  width:auto;
+  box-shadow: 0 3px 10px #dddd;
+  margin:100px auto;
+  margin-top: 20px;
+  border: 1px solid #ddd ;
 }
 
-#currency,.container.container-two{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    text-align: center; 
+thead tr {
+  background-color: #FF8C00 ;
+  color: #fff;
+  text-align:left;
 }
 
-.container-two{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+th,td {
+  padding: 5px 10px ;
+
 }
 
-.container-two-button {
-    padding: 5px;
-    font-size: 18px;
-    background: #FF8C00;
-    color:#ffff;
-    width:30%;
-    border: none;
-    outline: none;
+tbody tr,td,th {
+  border: 1px solid #ddd;
+
 }
+
+tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type{
+  border-bottom: 2px solid hsla(33, 100%, 50%, 0.703) ;
+
+}
+
+tbody tr td button.delete {
+  background: #ff0000;
+  border: none;
+  color:#fff;
+   cursor: pointer;
+
+}
+
+tbody tr td button.update {
+  background: #0000ff;
+  border: none;
+  color:#fff;
+   cursor: pointer;
+
+}
+
 
 </style>

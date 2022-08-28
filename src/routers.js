@@ -2,6 +2,7 @@ import ViewPair from './components/pairs/ViewPair.vue'
 import SignIn from './components/SignIn.vue'
 import AddPair from './components/pairs/AddPair.vue'
 import ViewConversion from './components/pairs/ViewConversion.vue'
+import addCurrency from './components/pairs/addCurrency.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -21,13 +22,19 @@ const routes = [
     {
         name: "AddPair",
         component: AddPair,
-        path: "/pairs/add"
+        path: "/pairs/addpair"
     },
 
     {
         name: "ViewConversion",
         component: ViewConversion,
         path: "/pairs/conversion"
+    },
+
+    {
+        name: "addCurrency",
+        component: addCurrency,
+        path: "/pairs/addcurrency"
     }
 
 
