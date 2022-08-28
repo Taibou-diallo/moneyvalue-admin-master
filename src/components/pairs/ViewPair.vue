@@ -32,15 +32,23 @@ export default {
           pairs:[],
            currency_start:"",
            currency_end:"",
-           rate:""
+           rate:"",
+          
         }
+
     },
 
 mounted() {
-    axios.get('http://127.0.0.1:8000/api/pairs')
+
+    axios.get('http://127.0.0.1:8000/api/pairs',
+       {
+        headers: {'Authorization': 'Bearer '+localStorage.getItem('user-token')}
+       }
+    )
 
         .then(response=>
         this.pairs= response.data
+        // console.log(response);
         )
 
         // capturer les erreurs avec la methode catch

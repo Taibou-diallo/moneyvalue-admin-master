@@ -25,7 +25,7 @@ export default {
        async  signIn(){
             console.log("signIn",this.email,this.password)
 
-            let result = await axios.post("http://127.0.0.1:8000/users",{
+            let result = await axios.post("http://127.0.0.1:8000/api/login",{
                 email:this.email,
                 password:this.password,
                 
@@ -33,9 +33,10 @@ export default {
             console.warn(result);
 
             if(result.status==201) {
-              localStorage.setItem("user-info",JSON.stringify(result.data))
+              localStorage.setItem("user-token",result.data.token)
             //   redirection de la page home apres connexion
-              this.$router.push({name:'ViewPair'})
+            window.location.href = 'http://127.0.0.1:8080/pairs/view'
+            //   this.$router.push({name:'ViewPair'})
             }
         }
     }
